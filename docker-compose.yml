@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:10.4
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: web_client
+      POSTGRES_PASSWORD: web_client123
+      POSTGRES_DB: booking_db
