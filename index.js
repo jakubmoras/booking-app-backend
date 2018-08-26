@@ -1,6 +1,8 @@
 'use strict';
 
 const Hapi = require('hapi');
+const api = require('./src/api');
+const DAO = require('./src/DAO');
 
 const server = Hapi.server({
     port: 3000,
@@ -10,9 +12,7 @@ const server = Hapi.server({
 server.route({
     method: 'GET',
     path: '/',
-    handler: function (request, h) {
-        return {test: "Hello world"};
-    }
+    handler: api.mainHandler
 });
 
 server.start().then(() => {
