@@ -11,8 +11,8 @@ const server = Hapi.server({
 
 server.route({
     method: 'GET',
-    path: '/',
-    handler: api.mainHandler
+    path: '/reservations',
+    handler: api.reservationsEndpoint
 });
 
 server.start().then(() => {
