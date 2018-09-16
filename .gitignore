@@ -2,3 +2,5 @@ node_modules
 node_module/*
 .idea
 .idea/*
+.idea/misc.xml
+.idea/watcherTasks.xml
