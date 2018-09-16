@@ -12,7 +12,10 @@ const server = Hapi.server({
 server.route({
     method: 'GET',
     path: '/reservations',
-    handler: api.reservationsEndpoint
+    handler: api.reservationsEndpoint,
+    options: {
+        cors: true
+    }
 });
 
 server.start().then(() => {
