@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "server": "node index.js",
     "seed": "node scripts/seed.js"
   },
   "engines": {
