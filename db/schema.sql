@@ -1,4 +1,4 @@
-DROP SCHEMA "bookingapp" CASCADE;
+DROP SCHEMA IF EXISTS "bookingapp" CASCADE;
 
 CREATE SCHEMA "bookingapp" AUTHORIZATION web_client;
 

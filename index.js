@@ -2,7 +2,8 @@
 
 const Hapi = require('hapi');
 const api = require('./src/api');
-const DAO = require('./src/DAO');
+
+// TODO pull out cors setting from server.route
 
 const server = Hapi.server({
     port: 3000,
@@ -12,7 +13,16 @@ const server = Hapi.server({
 server.route({
     method: 'GET',
     path: '/reservations',
-    handler: api.reservationsEndpoint,
+    handler: api.getReservationsEndpoint,
+    options: {
+        cors: true
+    }
+});
+
+server.route({
+    method: 'POST',
+    path: '/reservation',
+    handler: api.postReservationEndpoint,
     options: {
         cors: true
     }

@@ -1,6 +1,6 @@
 const DAO = require("./DAO.js");
 
-function reservationsEndpoint(request, h) {
+function getReservationsEndpoint(request, h) {
     return DAO.getReservations().then(data => {
         return data.map(row => ({
             id: row['Id'],
@@ -13,6 +13,13 @@ function reservationsEndpoint(request, h) {
     });
 }
 
+function postReservationEndpoint(request, h) {
+    // TODO WIP
+    // NIY
+    return request.payload;
+}
+
 module.exports = {
-    reservationsEndpoint
+    getReservationsEndpoint,
+    postReservationEndpoint
 };
