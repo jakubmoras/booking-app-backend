@@ -14,7 +14,11 @@ function getReservationsEndpoint(request, h) {
 }
 
 function postReservationEndpoint(request, h) {
-    return DAO.insertReservation(request.payload);
+    return DAO.insertReservation(request.payload).then(() => {
+        return h.response().code(201);
+    }).catch(err => {
+        return h.response().code(412);
+    });
 }
 
 module.exports = {

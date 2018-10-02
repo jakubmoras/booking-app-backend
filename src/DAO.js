@@ -22,9 +22,6 @@ function insertReservation(reservation) {
         return client.query(query, values).then(result => {
             client.end();
             return result.rows;
-        }).catch(e => {
-            console.error(e);
-            throw e;
         });
     });
 }
