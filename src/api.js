@@ -14,9 +14,7 @@ function getReservationsEndpoint(request, h) {
 }
 
 function postReservationEndpoint(request, h) {
-    // TODO WIP
-    // NIY
-    return request.payload;
+    return DAO.insertReservation(request.payload);
 }
 
 module.exports = {
