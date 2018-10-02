@@ -15,7 +15,7 @@ function insertReservation(reservation) {
         const query = 'INSERT INTO bookingapp.main_reservations("Event_General_Type", "Event_Detail_Type", "Room_Type", "Time", "Comment")' +
             ' VALUES($1, $2, $3, $4, $5)';
         const values = _.chain(reservation)
-            .pick(['Event_General_Type', 'Event_Detail_Type', 'Room_Type', 'Time', 'Comment'])
+            .pick(['eventGeneralType', 'eventDetailType', 'roomType', 'time', 'comment'])
             .values()
             .value();
         values.Time = new Date(reservation.Time);
