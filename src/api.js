@@ -20,8 +20,15 @@ function postReservationEndpoint(request, h) {
         return h.response().code(412);
     });
 }
+function getMenuEndpoint(request, h) {
+    return DAO.getMenu().then(data => {
+        return data
+        // todo map table fields names for variable
+    });
+}
 
 module.exports = {
     getReservationsEndpoint,
-    postReservationEndpoint
+    postReservationEndpoint,
+    getMenuEndpoint
 };

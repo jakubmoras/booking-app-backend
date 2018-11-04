@@ -26,7 +26,18 @@ function insertReservation(reservation) {
     });
 }
 
+function getMenu() {
+    return db.getClient().then(client => {
+        return client.query('select * from bookingapp."dishes"').then(result => {
+            client.end();
+            return result.rows;
+        });
+    });
+
+}
+
 module.exports = {
     getReservations,
-    insertReservation
+    insertReservation,
+    getMenu
 };

@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "test": "./node_modules/.bin/mocha --recursive tests"
   },
   "engines": {
     "node": "8.11.3"

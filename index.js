@@ -19,10 +19,20 @@ server.route({
     }
 });
 
+
 server.route({
     method: 'POST',
     path: '/reservation',
     handler: api.postReservationEndpoint,
+    options: {
+        cors: true
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/menu',
+    handler: api.getMenuEndpoint,
     options: {
         cors: true
     }
