@@ -36,8 +36,18 @@ function getMenu() {
 
 }
 
+function getReservationExtras(category) {
+    return db.getClient().then(client => {
+        return client.query('SELECT * FROM bookingapp.reservation_extras where "Category" = $1',[category]).then(result => {
+            client.end();
+            return result.rows;
+        });
+    });
+}
+
 module.exports = {
     getReservations,
     insertReservation,
-    getMenu
+    getMenu,
+    getReservationExtras
 };

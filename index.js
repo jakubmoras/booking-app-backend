@@ -19,7 +19,16 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/extras/{extrasCategory}',
+    handler: api.getReservationsExtrasEndpoint,
+    options: {
+        cors: true
+    }
+});
 
+console.log('ok')
 server.route({
     method: 'POST',
     path: '/reservation',

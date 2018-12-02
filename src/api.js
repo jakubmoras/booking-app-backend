@@ -27,8 +27,14 @@ function getMenuEndpoint(request, h) {
     });
 }
 
+function getReservationsExtrasEndpoint(request, h) {
+    const extrasCategory = request.params['extrasCategory'];
+    return DAO.getReservationExtras(extrasCategory).catch( err=> (console.error(err)));
+}
+
 module.exports = {
     getReservationsEndpoint,
     postReservationEndpoint,
-    getMenuEndpoint
+    getMenuEndpoint,
+    getReservationsExtrasEndpoint
 };

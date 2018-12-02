@@ -3,6 +3,7 @@ const config = require('../config.js');
 
 function getClient() {
     const client = new pg.Client(config.db);
+    console.log("test");
     return client.connect()
         .then(() => {
             console.log('Connected to database');
